@@ -1,6 +1,8 @@
-<img [src]="imgUrl" (click)="openBridgeLabz()" style="cursor: pointer;" />
+<!-- Input field with Two-Way Data Binding -->
+<input type="text" [(ngModel)]="userName" (input)="validateUserName()" placeholder="Enter your name" />
 
-<input type="text" [(ngModel)]="userName" placeholder="Enter your name" />
+<!-- Hello Message if no error -->
+<h2 *ngIf="!errorMessage && userName">Hello from BridgeLabz, {{ userName }}!</h2>
 
-
-<h2>Hello from BridgeLabz, {{ userName }}!</h2>
+<!-- Error message -->
+<p *ngIf="errorMessage" style="color: red;">{{ errorMessage }}</p>
